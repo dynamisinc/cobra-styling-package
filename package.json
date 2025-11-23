@@ -1,0 +1,48 @@
+{
+  "name": "cobra-styling-package",
+  "version": "1.0.0",
+  "description": "COBRA SPA styling files package for seeding new prototype projects",
+  "main": "index.js",
+  "scripts": {
+    "install-to-project": "node scripts/install.js"
+  },
+  "keywords": [
+    "cobra",
+    "styling",
+    "mui",
+    "theme",
+    "react",
+    "prototype"
+  ],
+  "author": "COBRA Development Team",
+  "license": "UNLICENSED",
+  "dependencies": {},
+  "peerDependencies": {
+    "@mui/material": "^7.0.0",
+    "@mui/icons-material": "^7.0.0",
+    "@emotion/react": "^11.0.0",
+    "@emotion/styled": "^11.0.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@fortawesome/fontawesome-svg-core": "^6.0.0",
+    "@fortawesome/sharp-light-svg-icons": "^6.0.0",
+    "@fortawesome/sharp-solid-svg-icons": "^6.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "optionalDependencies": {
+    "ag-grid-community": "^31.0.0",
+    "ag-grid-react": "^31.0.0",
+    "ag-grid-enterprise": "^31.0.0",
+    "react-hook-form": "^7.0.0",
+    "react-router-dom": "^6.0.0"
+  },
+  "files": [
+    "styles/**/*",
+    "components/**/*",
+    "docs/**/*",
+    "scripts/**/*",
+    "install.sh",
+    "install.ps1",
+    "README.md"
+  ]
+}

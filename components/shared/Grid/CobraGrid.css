@@ -1,0 +1,29 @@
+.ag-theme-alpine {
+  --ag-row-hover-color: #f1f1f1;
+  --ag-range-selection-border-style: none;
+  --ag-selected-row-background-color: #DBE9FA;
+}
+
+.ag-details-row {
+  padding: 5px;
+}
+
+.ag-details-row .ag-row {
+  background-color: #EAF2FB;
+  overflow: hidden;
+}
+
+.ag-row-group-expanded {
+  background-color: #DBE9FA !important;
+}
+
+.cell-vertical-center {
+  align-items: center;
+  display: flex;
+}
+
+.cell-fully-centered {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
