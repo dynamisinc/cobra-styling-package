@@ -1,0 +1,51 @@
+name: Verify Package
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Verify package structure
+      run: |
+        echo "Verifying COBRA Styling Package structure..."
+
+        # Check required directories
+        test -d styles || (echo "Missing styles directory" && exit 1)
+        test -d components || (echo "Missing components directory" && exit 1)
+        test -d docs || (echo "Missing docs directory" && exit 1)
+
+        # Check required files
+        test -f README.md || (echo "Missing README.md" && exit 1)
+        test -f QUICK_START.md || (echo "Missing QUICK_START.md" && exit 1)
+        test -f install.sh || (echo "Missing install.sh" && exit 1)
+        test -f install.ps1 || (echo "Missing install.ps1" && exit 1)
+        test -f package.json || (echo "Missing package.json" && exit 1)
+
+        # Check style files
+        test -f styles/Theme.ts || (echo "Missing Theme.ts" && exit 1)
+        test -f styles/CobraStyles.ts || (echo "Missing CobraStyles.ts" && exit 1)
+        test -f styles/styledComponents/index.ts || (echo "Missing styledComponents index" && exit 1)
+
+        # Check documentation
+        test -f docs/COBRA_STYLING_GUIDE.md || (echo "Missing COBRA_STYLING_GUIDE.md" && exit 1)
+        test -f docs/AI_AGENT_CONTEXT.md || (echo "Missing AI_AGENT_CONTEXT.md" && exit 1)
+
+        echo "✅ Package structure verified successfully!"
+
+    - name: Count files
+      run: |
+        echo "Package file count:"
+        find . -type f -name "*.tsx" -o -name "*.ts" -o -name "*.css" -o -name "*.md" | grep -v node_modules | grep -v .git | wc -l
+
+    - name: Check install script permissions
+      run: |
+        test -x install.sh || (echo "install.sh not executable" && exit 1)
+        echo "✅ Install script is executable"
