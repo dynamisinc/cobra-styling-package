@@ -2,8 +2,36 @@ import { useEffect, useState } from "react";
 import { IconDefinition } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { IconSizes } from 'utilities/icons/icons';
-import { fasl } from "@fortawesome/sharp-light-svg-icons";
-import { fak } from '@awesome.me/kit-909045e8fc/icons';
+import * as regularIcons from "@fortawesome/free-regular-svg-icons";
+import * as solidIcons from "@fortawesome/free-solid-svg-icons";
+
+/**
+ * CobraDynamicFontAwesomeIcon - Renders FontAwesome icons dynamically by name
+ *
+ * This component uses FontAwesome Free icons (regular and solid).
+ *
+ * For prototypes using custom icon kits:
+ * You can extend this component by importing your custom kit and adding
+ * support for additional icon prefixes.
+ *
+ * @example
+ * // Using regular icons
+ * <CobraDynamicFontAwesomeIcon
+ *   iconName="fa-regular fa-circle-user"
+ *   backgroundColor="#0020c2"
+ *   color="#ffffff"
+ *   iconSize={IconSizes.Medium}
+ * />
+ *
+ * @example
+ * // Using solid icons
+ * <CobraDynamicFontAwesomeIcon
+ *   iconName="fa-solid fa-plus"
+ *   backgroundColor="#008000"
+ *   color="#ffffff"
+ *   iconSize={IconSizes.Small}
+ * />
+ */
 
 interface CobraDynamicFontAwesomeIconProps {
   backgroundColor?: string;
@@ -21,19 +49,32 @@ export const CobraDynamicFontAwesomeIcon = ({backgroundColor, color, iconName, i
       return;
     }
 
-    const sharpLightPrefix = "fa-sharp fa-light fa-";
-    const kitPrefix = "fa-kit fa-";
+    // Support for free-regular icons
+    const regularPrefix = "fa-regular fa-";
+    // Support for free-solid icons
+    const solidPrefix = "fa-solid fa-";
 
-    if (iconName.startsWith(sharpLightPrefix)) {
-      const iconNameWithoutPrefix = iconName.substring(sharpLightPrefix.length);
-      const iconDef = Object.values(fasl).find(icon => icon.iconName === iconNameWithoutPrefix);
+    if (iconName.startsWith(regularPrefix)) {
+      const iconNameWithoutPrefix = iconName.substring(regularPrefix.length);
+      // Convert kebab-case to camelCase with 'fa' prefix (e.g., "circle-user" -> "faCircleUser")
+      const camelCaseName = 'fa' + iconNameWithoutPrefix
+        .split('-')
+        .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+        .join('');
+      const iconDef = regularIcons[camelCaseName as keyof typeof regularIcons] as IconDefinition | undefined;
       setIconDefinition(iconDef || null);
-    } else if (iconName.startsWith(kitPrefix)) {
-      const iconNameWithoutPrefix = iconName.substring(kitPrefix.length);
-      const iconDef = Object.values(fak).find(icon => icon.iconName === iconNameWithoutPrefix);
+    } else if (iconName.startsWith(solidPrefix)) {
+      const iconNameWithoutPrefix = iconName.substring(solidPrefix.length);
+      // Convert kebab-case to camelCase with 'fa' prefix (e.g., "plus" -> "faPlus")
+      const camelCaseName = 'fa' + iconNameWithoutPrefix
+        .split('-')
+        .map(part => part.charAt(0).toUpperCase() + part.slice(1))
+        .join('');
+      const iconDef = solidIcons[camelCaseName as keyof typeof solidIcons] as IconDefinition | undefined;
       setIconDefinition(iconDef || null);
     } else {
-      //TODO: update when alternates to fontawesome sharp-light and kit become a thing
+      // For custom icon kits or other icon libraries, extend this component
+      // by adding additional else-if branches with your custom logic
       setIconDefinition(null);
     }
   }, [iconName]);
@@ -63,11 +104,10 @@ export const CobraDynamicFontAwesomeIcon = ({backgroundColor, color, iconName, i
       />
     )
   }
-  // else if () {
-  //   This block will be when we allow custom icons for event categories beyond font awesome
-  // }
+  // For custom implementations (images, SVGs, etc.), extend this component
+  // by adding additional rendering logic here
   else {
     return <></>
   }
-  
+
 }

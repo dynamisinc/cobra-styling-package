@@ -28,9 +28,9 @@ export enum IconSizes {
  * @returns SVG markup as string
  *
  * @example
- * import { faEdit } from '@fortawesome/sharp-light-svg-icons';
+ * import { faPenToSquare } from '@fortawesome/free-regular-svg-icons';
  *
- * const editIcon = getFontAwesomeIconSvg(faEdit, IconSizes.Small, '#0020c2');
+ * const editIcon = getFontAwesomeIconSvg(faPenToSquare, IconSizes.Small, '#0020c2');
  *
  * // Use in AG Grid column definition
  * {

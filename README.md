@@ -77,12 +77,12 @@ git clone <your-template-repo-url> my-new-prototype
 ```bash
 npm install @mui/material @mui/icons-material @emotion/react @emotion/styled
 npm install @fortawesome/react-fontawesome @fortawesome/fontawesome-svg-core
-npm install @fortawesome/sharp-light-svg-icons @fortawesome/sharp-solid-svg-icons
+npm install @fortawesome/free-regular-svg-icons @fortawesome/free-solid-svg-icons
 ```
 
 **Optional (if using grids):**
 ```bash
-npm install ag-grid-community ag-grid-react ag-grid-enterprise
+npm install ag-grid-community ag-grid-react
 ```
 
 **Optional (for forms):**
@@ -313,19 +313,34 @@ export const MyDialog = ({ open, onClose }) => (
 
 See `docs/PROTOTYPE_SETUP_GUIDE.md` for complete troubleshooting guide.
 
+## 💻 Examples
+
+See working examples in [/examples](examples/):
+
+- **simple-prototype**: Complete React app demonstrating all features with license-free dependencies
+- Shows FontAwesome FREE icons, AG Grid Community, and all COBRA components
+
+```bash
+cd examples/simple-prototype
+./setup-cobra-styles.ps1  # or .sh on Mac/Linux
+npm install
+npm start
+```
+
 ## 📊 Version
 
 - **Package Version**: 1.0.0
 - **COBRA Version**: Current
 - **MUI Version**: 7.0.2
-- **Last Updated**: 2025-11-21
+- **Last Updated**: 2025-11-24
 
 ## 🤝 Support
 
 For questions or issues:
-1. Check documentation in `src/docs/`
+1. Check documentation in `docs/`
 2. Reference `STYLING_DOCS_README.md` for navigation
-3. Use AI agents with `AI_AGENT_CONTEXT.md`
+3. Try the working example in `examples/`
+4. Use AI agents with `AI_AGENT_CONTEXT.md`
 
 ## 📝 License
 

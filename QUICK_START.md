@@ -13,7 +13,7 @@ cd my-react-project
 # 3. Install dependencies
 npm install @mui/material @mui/icons-material @emotion/react @emotion/styled
 npm install @fortawesome/react-fontawesome @fortawesome/fontawesome-svg-core
-npm install @fortawesome/sharp-light-svg-icons @fortawesome/sharp-solid-svg-icons
+npm install @fortawesome/free-regular-svg-icons @fortawesome/free-solid-svg-icons
 ```
 
 ### Mac/Linux (Bash)
@@ -27,7 +27,7 @@ bash ../cobra-spa/cobra-styling-package/install.sh
 # 3. Install dependencies
 npm install @mui/material @mui/icons-material @emotion/react @emotion/styled
 npm install @fortawesome/react-fontawesome @fortawesome/fontawesome-svg-core
-npm install @fortawesome/sharp-light-svg-icons @fortawesome/sharp-solid-svg-icons
+npm install @fortawesome/free-regular-svg-icons @fortawesome/free-solid-svg-icons
 ```
 
 ## ⚡ Instant Setup (Manual Copy)

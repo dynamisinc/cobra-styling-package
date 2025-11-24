@@ -165,8 +165,8 @@ After running installer, verify:
   "@emotion/styled": "^11.0.0",
   "@fortawesome/react-fontawesome": "^0.2.0",
   "@fortawesome/fontawesome-svg-core": "^6.0.0",
-  "@fortawesome/sharp-light-svg-icons": "^6.0.0",
-  "@fortawesome/sharp-solid-svg-icons": "^6.0.0"
+  "@fortawesome/free-regular-svg-icons": "^6.0.0",
+  "@fortawesome/free-solid-svg-icons": "^6.0.0"
 }
 ```
 
@@ -175,7 +175,6 @@ After running installer, verify:
 {
   "ag-grid-community": "^31.0.0",
   "ag-grid-react": "^31.0.0",
-  "ag-grid-enterprise": "^31.0.0",
   "react-hook-form": "^7.0.0",
   "react-router-dom": "^6.0.0"
 }

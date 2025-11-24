@@ -59,12 +59,12 @@ npm install @mui/material @mui/icons-material @emotion/react @emotion/styled
 # MUI Date Pickers (if needed)
 npm install @mui/x-date-pickers
 
-# FontAwesome
+# FontAwesome (Free version - no license required)
 npm install @fortawesome/react-fontawesome @fortawesome/fontawesome-svg-core
-npm install @fortawesome/sharp-light-svg-icons @fortawesome/sharp-solid-svg-icons
+npm install @fortawesome/free-regular-svg-icons @fortawesome/free-solid-svg-icons
 
-# AG Grid (if you need data grids)
-npm install ag-grid-community ag-grid-react ag-grid-enterprise
+# AG Grid (if you need data grids - community edition is free)
+npm install ag-grid-community ag-grid-react
 
 # Form handling (recommended)
 npm install react-hook-form

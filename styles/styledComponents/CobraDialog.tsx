@@ -2,7 +2,7 @@ import { Dialog, DialogContent, DialogTitle, IconButton } from '@mui/material';
 import { PropsWithChildren } from 'react';
 import { useTheme,} from '@mui/material/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faClose } from '@fortawesome/sharp-solid-svg-icons';
+import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import CobraStyles from 'styles/CobraStyles';
 import { useCustomStyles } from 'styles/CustomStylesProvider';
 
@@ -33,7 +33,7 @@ export const CobraDialog = ({ children, contentHeight, contentWidth, hideCloseBu
       }
       
       {!hideCloseButton && <IconButton aria-label="Close" onClick={onClose} sx={getLtrRtlStyle({ padding: "4px", position: 'absolute', right: 8, left: "unset", top: 2 })}>
-        <FontAwesomeIcon icon={faClose} />
+        <FontAwesomeIcon icon={faXmark} />
       </IconButton>}
       <DialogContent style={DialogContentStyles}>
         {children}

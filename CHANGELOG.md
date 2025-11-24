@@ -115,10 +115,10 @@ const MyComponent = () => {
 **Usage Example**:
 ```typescript
 import { IconSizes, getFontAwesomeIconSvg } from './utilities/icons/icons';
-import { faEdit } from '@fortawesome/sharp-light-svg-icons';
+import { faPenToSquare } from '@fortawesome/free-regular-svg-icons';
 
 // Use in AG Grid
-const editIconSvg = getFontAwesomeIconSvg(faEdit, IconSizes.Small, '#0020c2');
+const editIconSvg = getFontAwesomeIconSvg(faPenToSquare, IconSizes.Small, '#0020c2');
 ```
 
 ---
