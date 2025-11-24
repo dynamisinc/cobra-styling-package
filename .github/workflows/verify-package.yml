@@ -20,6 +20,7 @@ jobs:
         # Check required directories
         test -d styles || (echo "Missing styles directory" && exit 1)
         test -d components || (echo "Missing components directory" && exit 1)
+        test -d utilities || (echo "Missing utilities directory" && exit 1)
         test -d docs || (echo "Missing docs directory" && exit 1)
 
         # Check required files
@@ -32,7 +33,11 @@ jobs:
         # Check style files
         test -f styles/Theme.ts || (echo "Missing Theme.ts" && exit 1)
         test -f styles/CobraStyles.ts || (echo "Missing CobraStyles.ts" && exit 1)
+        test -f styles/CustomStylesProvider.tsx || (echo "Missing CustomStylesProvider.tsx" && exit 1)
         test -f styles/styledComponents/index.ts || (echo "Missing styledComponents index" && exit 1)
+
+        # Check utility files
+        test -f utilities/icons/icons.ts || (echo "Missing utilities/icons/icons.ts" && exit 1)
 
         # Check documentation
         test -f docs/COBRA_STYLING_GUIDE.md || (echo "Missing COBRA_STYLING_GUIDE.md" && exit 1)

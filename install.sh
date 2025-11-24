@@ -49,6 +49,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 echo "📁 Creating directories..."
 mkdir -p src/styles/styledComponents
 mkdir -p src/components/shared/Grid
+mkdir -p src/utilities/icons
 mkdir -p src/docs
 
 # Copy styles
@@ -58,6 +59,10 @@ cp -r "$SCRIPT_DIR/styles/"* src/styles/
 # Copy grid components
 echo "📊 Copying grid components..."
 cp -r "$SCRIPT_DIR/components/shared/Grid/"* src/components/shared/Grid/
+
+# Copy utilities
+echo "🔧 Copying utility files..."
+cp -r "$SCRIPT_DIR/utilities/"* src/utilities/
 
 # Copy documentation
 echo "📚 Copying documentation..."

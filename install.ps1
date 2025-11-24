@@ -46,6 +46,7 @@ $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 Write-Host "📁 Creating directories..." -ForegroundColor Yellow
 New-Item -ItemType Directory -Force -Path "src/styles/styledComponents" | Out-Null
 New-Item -ItemType Directory -Force -Path "src/components/shared/Grid" | Out-Null
+New-Item -ItemType Directory -Force -Path "src/utilities/icons" | Out-Null
 New-Item -ItemType Directory -Force -Path "src/docs" | Out-Null
 
 # Copy styles
@@ -55,6 +56,10 @@ Copy-Item -Path "$scriptDir/styles/*" -Destination "src/styles/" -Recurse -Force
 # Copy grid components
 Write-Host "📊 Copying grid components..." -ForegroundColor Yellow
 Copy-Item -Path "$scriptDir/components/shared/Grid/*" -Destination "src/components/shared/Grid/" -Recurse -Force
+
+# Copy utilities
+Write-Host "🔧 Copying utility files..." -ForegroundColor Yellow
+Copy-Item -Path "$scriptDir/utilities/*" -Destination "src/utilities/" -Recurse -Force
 
 # Copy documentation
 Write-Host "📚 Copying documentation..." -ForegroundColor Yellow
